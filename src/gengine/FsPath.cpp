@@ -93,7 +93,7 @@ createDir(const std::string &dir)
         return;
     }
 
-#ifdef WIN32
+#if defined(WIN32) || defined(__MINGW32__)
     int error = mkdir(dir.c_str());
 #else
     int error = mkdir(dir.c_str(), 0777);
